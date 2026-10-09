@@ -1,0 +1,3 @@
+<audio id="maaDurgaSong" loop preload="auto">
+  <source src="./maa-durga-song.mp3" type="audio/mpeg">
+</audio>
