@@ -1,286 +1,901 @@
-<!DO
+
+<!DOCTYPE html>
+<html lang="bn">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Durga Puja Dress Surprise</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#570018">
+<title>Durga Puja Celebration 🌺</title>
 
-<st
+<style>
+*{box-sizing:border-box}
+:root{--gold:#ffd76a;--red:#570018;--panel:rgba(45,5,25,.92)}
+html{scroll-behavior:smooth}
 body{
-  margin:0;
-  min-height:100vh;
-  background:linear-gradient(135deg,#fff7ed,#ffe4e6);
-  font-family:Arial,sans-serif;
-  color:#35120b;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  padding:20px;
+ margin:0;min-height:100vh;text-align:center;
+ font-family:Arial,sans-serif;color:#fff8e8;
+ background:linear-gradient(135deg,#320015,#a80030,#ff7617,#59002b);
+ background-size:300% 300%;animation:bgMove 14s ease infinite;
+ overflow-x:hidden
 }
-
+@keyframes bgMove{0%,100%{background-position:0 50%}50%{background-position:100% 50%}}
+header{padding:16px 10px;position:relative;z-index:1}
+h1{color:var(--gold);text-shadow:0 2px #a54800,0 5px #602000,0 0 22px orange}
+h2{color:#ffe5a1;text-shadow:0 0 10px #ffad36}
 .card{
-  width:min(94%,520px);
-  background:white;
-  border-radius:24px;
-  padding:28px;
-  box-shadow:0 15px 50px #7c2d1225;
-  text-align:center;
+ width:min(94%,640px);margin:18px auto;padding:20px;
+ border:1px solid var(--gold);border-radius:20px;
+ background:var(--panel);box-shadow:0 0 18px #ff9d3150;
+ position:relative;z-index:1;animation:cardGlow 5s infinite
 }
-
-.badge{
-  display:inline-block;
-  background:#fff0d9;
-  color:#9a3412;
-  padding:7px 12px;
-  border-radius:999px;
-  font-size:12px;
-  font-weight:bold;
-}
-
-h1{
-  font-size:30px;
-  margin:18px 0 8px;
-}
-
-.subtitle{
-  color:#6b4b45;
-  line-height:1.6;
-}
-
-form{
-  text-align:left;
-  margin-top:22px;
-}
-
-label{
-  display:block;
-  font-weight:bold;
-  margin:14px 0 7px;
-}
-
-input,select{
-  width:100%;
-  padding:13px;
-  border:1px solid #e7cfc7;
-  border-radius:10px;
-  font-size:15px;
-}
-
+@keyframes cardGlow{50%{box-shadow:0 0 28px #ff9d3180,0 0 38px #ff267050}}
 button{
-  width:100%;
-  margin-top:22px;
-  padding:14px;
-  border:0;
-  border-radius:12px;
-  background:#b91c1c;
-  color:white;
-  font-size:16px;
-  font-weight:bold;
-  cursor:pointer;
+ border:1px solid #fff0ae;border-radius:25px;padding:12px 17px;margin:6px;
+ font-size:15px;font-weight:bold;cursor:pointer;color:#561026;
+ background:linear-gradient(135deg,#fff3b0,#ffb52e);
+ box-shadow:0 4px 0 #9b4616,0 7px 15px #0003;
+ transition:transform .2s,filter .2s
+}
+button:hover{transform:translateY(-2px);filter:brightness(1.08)}
+button:active{transform:translateY(2px)}
+button:disabled{opacity:.55;cursor:not-allowed}
+input,textarea{
+ width:min(95%,400px);padding:12px;margin:8px;
+ border:1px solid var(--gold);border-radius:12px;font:inherit;
+ background:#fffaf0;color:#35101d
+}
+.hidden{display:none!important}
+.status{color:#ffe69b;white-space:pre-wrap}
+.diya{font-size:56px;animation:glow 1.5s infinite alternate}
+@keyframes glow{to{text-shadow:0 0 25px gold,0 0 45px orange}}
+footer{padding:20px;color:#ffe6a5}
+#replyPreview{white-space:pre-wrap;overflow-wrap:anywhere}
+.quizQuestion{
+ background:#56152b;border:1px solid #a95a52;border-radius:14px;
+ padding:14px;margin:12px 0;text-align:left
+}
+.quizQuestion label{display:block;padding:8px;border-radius:8px;cursor:pointer}
+.quizQuestion input{width:auto;margin:0 8px 0 0}
+#flowerTarget{font-size:45px;cursor:pointer;display:inline-block}
+#flowerTarget:active{transform:scale(1.35)}
+.durga-scene{
+ width:min(100%,340px);height:300px;margin:10px auto;position:relative;
+ display:grid;place-items:center;perspective:900px;isolation:isolate
+}
+.aura{
+ position:absolute;width:230px;height:230px;border-radius:50%;
+ background:radial-gradient(circle,#ffdc72aa 0%,#ff671e55 38%,transparent 72%);
+ animation:auraPulse 2.5s infinite alternate
+}
+.mandala{
+ position:absolute;width:210px;height:210px;border:3px double #ffd76a;
+ border-radius:50%;box-shadow:0 0 18px #ffb52e,inset 0 0 20px #ffb52e55;
+ animation:mandalaSpin 18s linear infinite
+}
+.mandala:before,.mandala:after{
+ content:"";position:absolute;inset:14px;border:2px dashed #ff874b;
+ border-radius:50%;transform:rotateX(55deg)
+}
+.mandala:after{inset:30px;border-color:#fff0a5;transform:rotateY(60deg)}
+.durga-figure{
+ position:relative;z-index:2;font-size:100px;line-height:1.25;
+ filter:drop-shadow(0 0 12px #ffbd4a);
+ transform-style:preserve-3d;animation:durgaFloat 3.5s ease-in-out infinite
+}
+.durga-crown{font-size:52px;margin-bottom:-20px;filter:drop-shadow(0 0 10px gold)}
+.durga-caption{font-weight:bold;letter-spacing:2px;color:#ffe6a5;text-shadow:0 0 12px orange}
+@keyframes auraPulse{to{transform:scale(1.13);opacity:.65}}
+@keyframes mandalaSpin{to{transform:rotateZ(360deg) rotateX(8deg)}}
+@keyframes durgaFloat{
+ 0%,100%{transform:translateY(0) rotateY(-7deg) rotateX(2deg)}
+ 50%{transform:translateY(-10px) rotateY(7deg) rotateX(-2deg)}
 }
 
-#loading,#result{
-  display:none;
+/* NEW: expanded 3D Darshan styling */
+.darshan-card{overflow:hidden}
+.darshan-stage{
+ position:relative;max-width:420px;height:360px;margin:12px auto;
+ display:grid;place-items:center;perspective:1000px;
+ border-radius:24px;
+ background:radial-gradient(ellipse at center,#8c1b38 0%,#410019 58%,#20000d 100%);
+ border:1px solid #ffcf68;overflow:hidden
 }
-
-.loader{
-  width:48px;
-  height:48px;
-  border:5px solid #f3d5d0;
-  border-top-color:#b91c1c;
-  border-radius:50%;
-  animation:spin 1s linear infinite;
-  margin:25px auto;
+.darshan-stage:before{
+ content:"";position:absolute;width:290px;height:290px;border-radius:50%;
+ border:2px solid #ffdb79;box-shadow:0 0 20px #ffb52e, inset 0 0 30px #ffb52e;
+ animation:mandalaSpin 24s linear infinite
 }
-
-@keyframes spin{
-  to{transform:rotate(360deg)}
+.darshan-stage:after{
+ content:"";position:absolute;width:245px;height:245px;border-radius:50%;
+ border:2px dashed #ff9867;animation:mandalaSpin 18s linear infinite reverse
 }
-
-#result h2{
-  font-size:48px;
-  margin:15px 0;
-  color:#b91c1c;
+.darshan-halo{
+ position:absolute;width:250px;height:250px;border-radius:50%;
+ background:radial-gradient(circle,#ffd76a88,#ff7b2833 48%,transparent 72%);
+ animation:auraPulse 2s ease-in-out infinite alternate
 }
-
-.note{
-  font-size:14px;
-  color:#6b4b45;
-  line-height:1.6;
+.darshan-deity{
+ position:relative;z-index:2;font-size:100px;line-height:1.2;
+ filter:drop-shadow(0 0 15px #ffc34e);
+ transform-style:preserve-3d;
+ animation:darshanFloat 4s ease-in-out infinite
 }
-
-.confetti{
-  font-size:35px;
+.darshan-deity .crown{font-size:60px;margin-bottom:-20px}
+.darshan-deity .face{font-size:75px}
+.darshan-weapons{
+ position:absolute;z-index:1;left:12%;right:12%;top:44%;
+ display:flex;justify-content:space-between;font-size:35px;
+ filter:drop-shadow(0 0 9px gold)
+}
+.darshan-caption{position:absolute;z-index:3;bottom:12px;color:#ffe7a0;
+ font-weight:bold;letter-spacing:2px;text-shadow:0 0 12px #ffb52e}
+@keyframes darshanFloat{
+ 0%,100%{transform:translateY(0) rotateY(-8deg) rotateX(2deg)}
+ 50%{transform:translateY(-12px) rotateY(8deg) rotateX(-2deg)}
+}
+.challenge-grid{
+ display:grid;grid-template-columns:repeat(auto-fit,minmax(145px,1fr));gap:12px;margin-top:18px
+}
+.challenge-tile{
+ padding:16px 10px;border:1px solid #ffc85c;border-radius:16px;
+ background:linear-gradient(145deg,#70152f,#3c0921);
+ box-shadow:inset 0 0 16px #ffb52e18
+}
+.challenge-icon{font-size:38px}
+.challenge-tile p{font-size:13px;color:#ffe6b3}
+.petal,.particle3d{
+ position:fixed;top:-40px;pointer-events:none;z-index:5;
+ animation:fall linear forwards
+}
+@keyframes fall{to{transform:translateY(110vh) rotate(600deg);opacity:.1}}
+.particle3d{
+ top:auto;bottom:-40px;left:var(--x);font-size:var(--size);
+ filter:drop-shadow(0 0 8px gold);
+ animation:rise var(--duration) linear forwards
+}
+@keyframes rise{
+ 0%{transform:translateY(0) rotateY(0);opacity:0}
+ 15%{opacity:1}
+ 100%{transform:translateY(-115vh) rotateY(360deg) rotate(250deg);opacity:0}
+}
+.rgb-border{animation:rgbGlow 4s linear infinite}
+@keyframes rgbGlow{
+ 0%{box-shadow:0 0 18px #ff004c66}
+ 33%{box-shadow:0 0 23px #00eeff77}
+ 66%{box-shadow:0 0 23px #a600ff77}
+ 100%{box-shadow:0 0 18px #ff004c66}
+}
+body.rgb-on .card{animation:rgbGlow 2s linear infinite}
+.wheel-wrap{width:280px;max-width:85vw;margin:18px auto;position:relative}
+#wheel{
+ width:100%;aspect-ratio:1;border-radius:50%;position:relative;
+ border:8px solid #ffe89a;
+ background:conic-gradient(
+ #ffb72e 0deg 45deg,#a80d3b 45deg 90deg,
+ #ffe38b 90deg 135deg,#70204d 135deg 180deg,
+ #ffb72e 180deg 225deg,#a80d3b 225deg 270deg,
+ #ffe38b 270deg 315deg,#70204d 315deg 360deg);
+ box-shadow:0 0 0 4px #8d3b13,0 0 24px #ffbd46;
+ transition:transform 4s cubic-bezier(.12,.7,.12,1)
+}
+.wheel-label{
+ position:absolute;left:50%;top:50%;width:82px;margin-left:-41px;
+ margin-top:-13px;font-size:12px;font-weight:bold;color:#401020;
+ text-shadow:0 1px #fff6;transform-origin:center center
+}
+.wheel-pointer{
+ position:absolute;top:-16px;left:50%;transform:translateX(-50%);
+ z-index:2;font-size:32px;filter:drop-shadow(0 2px 3px #000)
+}
+.wheel-hub{
+ position:absolute;top:50%;left:50%;width:54px;height:54px;
+ transform:translate(-50%,-50%);border:4px solid #fff1b0;border-radius:50%;
+ background:radial-gradient(circle,#fff7bc,#c77912);
+ box-shadow:0 0 12px gold;z-index:2
+}
+#fxLayer{position:fixed;inset:0;pointer-events:none;z-index:20;overflow:hidden}
+.spark{
+ position:absolute;width:7px;height:7px;border-radius:50%;
+ background:var(--spark);box-shadow:0 0 12px var(--spark);
+ animation:burst 1.1s ease-out forwards
+}
+@keyframes burst{
+ 0%{transform:translate(0,0) scale(1);opacity:1}
+ 100%{transform:translate(var(--dx),var(--dy)) scale(.1);opacity:0}
+}
+#rgbToggle[aria-pressed="true"]{outline:2px solid #fff}
+@media(prefers-reduced-motion:reduce){
+ *,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;scroll-behavior:auto!important}
+ #wheel{transition:none}
 }
 </style>
 </head>
 
 <body>
+<div id="fxLayer" aria-hidden="true"></div>
 
-<!-- MAIN FORM -->
-<div class="card" id="main">
+<!-- Audio only: keep this MP3 beside index.html -->
+<audio id="maaDurgaSong" loop preload="auto">
+ <source src="maa-durga-song.mp3" type="audio/mpeg">
+</audio>
 
-  <div class="badge">
-    শারদীয়া বিশেষ অফার 🎉
+<header>
+ <h1>🌺 শুভ শারদীয়া 🌺</h1>
+ <p>Durga Puja Celebration</p>
+ <button onclick="toggleFullscreen()">⛶ Full Screen</button>
+ <button id="rgbToggle" aria-pressed="false" onclick="toggleRGB()">🌈 RGB Lights: Off</button>
+</header>
+
+<main id="homePage">
+<section class="card rgb-border" id="mainWelcome">
+ <div class="diya">🪔</div>
+ <div class="durga-scene" aria-label="Animated Maa Durga-inspired festive scene">
+  <div class="aura"></div><div class="mandala"></div>
+  <div class="durga-figure">
+   <div class="durga-crown">👑</div>
+   <div>🙏</div><div>🦁</div>
   </div>
+ </div>
+ <h2>Welcome to Puja World</h2>
+ <p class="durga-caption">✨ ENTER THE PUJA UNIVERSE ✨</p>
+ <p>একটি সুন্দর Puja surprise তোমার জন্য অপেক্ষা করছে!</p>
+ <input id="visitorName" maxlength="35" placeholder="তোমার নাম লেখো">
+ <br><button onclick="enterPuja()">✨ Enter ✨</button>
+ <p class="status" id="welcomeAudioStatus"></p>
+</section>
 
-  <h1>Durga Puja New Dress Surprise</h1>
+<section id="celebration" class="card hidden">
+ <div class="diya">🪔</div>
+ <h2 id="greeting">শুভ শারদীয়া!</h2>
+ <p>মা দুর্গার আশীর্বাদে তোমার জীবন আনন্দে ভরে উঠুক।</p>
+ <div style="font-size:42px">🌺 🙏 🌺</div>
+ <h3>🔊 Sound Control</h3>
+ <button onclick="playDhak()">🥁 Dhak</button>
+ <button onclick="playBell()">🔔 ঘণ্টা</button>
+ <button onclick="playConch()">🐚 শঙ্খ</button>
+ <button onclick="toggleMusic()">🎵 Music On / Off</button>
+ <button onclick="playLionSound()">🦁 Lion Roar</button>
+ <p class="status" id="soundStatus">Enter চাপলে গান চালু হওয়ার চেষ্টা করবে।</p>
+</section>
 
-  <p class="subtitle">
-    আপনার জন্য একটি Puja surprise dress অপেক্ষা করছে! ❤️<br>
-    নিচের ছোট্ট form-টি পূরণ করে claim করুন।
-  </p>
-
-  <form id="dressForm">
-
-    <label for="name">আপনার নাম</label>
-
-    <input
-      id="name"
-      type="text"
-      placeholder="নাম লিখুন"
-      required
-    >
-
-    <label for="dress">Dress পছন্দ</label>
-
-    <select id="dress" required>
-      <option value="">একটি বেছে নিন</option>
-      <option>Kurti</option>
-      <option>Punjabi</option>
-      <option>শাড়ি</option>
-      <option>Festive Shirt</option>
-    </select>
-
-    <button type="submit">
-      🎁 Claim My Puja Dress
-    </button>
-
-  </form>
-
-  <p class="note">
-    এটি একটি harmless prank।
-    কোনো payment, OTP, password বা sensitive information নেওয়া হয় না।
-  </p>
-
-</div>
-
-
-<!-- LOADING SCREEN -->
-<div class="card" id="loading">
-
-  <div class="badge">
-    SURPRISE PROCESSING...
+<!-- NEW: 3D DARSHAN -->
+<section id="darshanSection" class="card hidden darshan-card">
+ <h2>🌺 3D Maa Durga Darshan 🌺</h2>
+ <p>মা দুর্গার আশীর্বাদে তোমার দিন আনন্দময় হোক।</p>
+ <div class="darshan-stage" role="img" aria-label="Animated decorative Durga Puja scene">
+  <div class="darshan-halo"></div>
+  <div class="darshan-weapons"><span>🔱</span><span>🌺</span></div>
+  <div class="darshan-deity">
+   <div class="crown">👑</div>
+   <div class="face">🙏</div>
+   <div>🦁</div>
   </div>
+  <div class="darshan-caption">জয় মা দুর্গা</div>
+ </div>
+ <button onclick="darshanBlessing()">🙏 আশীর্বাদ নাও</button>
+ <p id="darshanStatus" class="status"></p>
+</section>
 
-  <h1>
-    আপনার Puja surprise তৈরি হচ্ছে...
-  </h1>
-
-  <div class="loader"></div>
-
-  <p id="status">
-    Dress selection যাচাই করা হচ্ছে...
-  </p>
-
-</div>
-
-
-<!-- PRANK RESULT -->
-<div class="card" id="result">
-
-  <div class="confetti">
-    🎊 🥳 🎊
+<section id="luckySection" class="card hidden">
+ <h2>🎡 3D Lucky Spin Wheel</h2>
+ <p>Wheel ঘুরিয়ে তোমার Puja wish পাও!</p>
+ <div class="wheel-wrap">
+  <div class="wheel-pointer">▼</div>
+  <div id="wheel">
+   <span class="wheel-label" style="transform:rotate(22.5deg) translateY(-91px) rotate(-22.5deg)">Happiness</span>
+   <span class="wheel-label" style="transform:rotate(67.5deg) translateY(-91px) rotate(-67.5deg)">Good Luck</span>
+   <span class="wheel-label" style="transform:rotate(112.5deg) translateY(-91px) rotate(-112.5deg)">Peace</span>
+   <span class="wheel-label" style="transform:rotate(157.5deg) translateY(-91px) rotate(-157.5deg)">Joy</span>
+   <span class="wheel-label" style="transform:rotate(202.5deg) translateY(-91px) rotate(-202.5deg)">Success</span>
+   <span class="wheel-label" style="transform:rotate(247.5deg) translateY(-91px) rotate(-247.5deg)">Love</span>
+   <span class="wheel-label" style="transform:rotate(292.5deg) translateY(-91px) rotate(-292.5deg)">Health</span>
+   <span class="wheel-label" style="transform:rotate(337.5deg) translateY(-91px) rotate(-337.5deg)">Joy</span>
+   <div class="wheel-hub"></div>
   </div>
+ </div>
+ <button id="spinButton" onclick="spinLucky()">🎯 Spin Now</button>
+ <h2 id="luckyResult">✨ তোমার ভাগ্য পরীক্ষা করো ✨</h2>
+</section>
 
-  <div class="badge">
-    PUJA SURPRISE COMPLETE
+<section id="secretSection" class="card hidden">
+ <h2>🔐 Secret Surprise</h2>
+ <p>Secret code: HELLO</p>
+ <input id="secretCode" maxlength="20" placeholder="Enter secret code">
+ <br><button onclick="unlockSecret()">Unlock 🎁</button>
+ <p id="secretResult" class="status"></p>
+</section>
+
+<section id="replySection" class="card hidden">
+ <h2>💌 Send a Puja Reply</h2>
+ <p>নিজের শুভেচ্ছার উত্তর লিখে share করো!</p>
+ <input id="replyName" maxlength="35" placeholder="তোমার নাম">
+ <br><textarea id="replyText" maxlength="300" rows="4" placeholder="তোমার শুভেচ্ছার উত্তর লেখো..."></textarea>
+ <br>
+ <button onclick="makeReply()">💌 Create Reply</button>
+ <button onclick="shareReply()">📤 Share Reply</button>
+ <p id="replyStatus" class="status"></p>
+ <div id="replyPreview" class="card hidden"></div>
+</section>
+
+<section id="nextPageSection" class="card hidden">
+ <h2>🎮 Puja Games Zone</h2>
+ <p>তোমার Puja games adventure শুরু করো!</p>
+ <button onclick="showGamesPage()">Next Page ➜</button>
+</section>
+</main>
+
+<main id="gamesPage" class="hidden">
+<section class="card">
+ <h2>🎮 Puja Games Zone</h2>
+ <p>খেলো, মজা করো, আর Puja celebration উপভোগ করো! 🌺</p>
+</section>
+
+<!-- NEW: CHALLENGE ZONE -->
+<section class="card" id="challengeZone">
+ <h2>🏆 Puja Challenge Zone</h2>
+ <p>নিজের পছন্দের challenge বেছে নাও!</p>
+ <div class="challenge-grid">
+  <div class="challenge-tile">
+   <div class="challenge-icon">🌸</div>
+   <h3>Flower Catch</h3>
+   <p>১৫ সেকেন্ডে যত ফুল ধরতে পারো।</p>
+   <button onclick="goToChallenge('flowerGame')">Play</button>
   </div>
+  <div class="challenge-tile">
+   <div class="challenge-icon">🪔</div>
+   <h3>Magic Diya</h3>
+   <p>১০ বার tap করে প্রদীপ জ্বালাও।</p>
+   <button onclick="goToChallenge('diyaGame')">Play</button>
+  </div>
+  <div class="challenge-tile">
+   <div class="challenge-icon">🧠</div>
+   <h3>Puja Quiz</h3>
+   <p>১৯টি প্রশ্নে নিজের জ্ঞান পরীক্ষা করো।</p>
+   <button onclick="goToChallenge('quizGame')">Play</button>
+  </div>
+ </div>
+ <p id="challengeStatus" class="status">Challenge শুরু করতে Play চাপো।</p>
+</section>
 
-  <h2>
-    GOTCHA! 😂
-  </h2>
+<section class="card" id="flowerGame">
+ <h2>🌸 Catch the Flower</h2>
+ <p>১৫ সেকেন্ডে যত ফুল ধরতে পারো!</p>
+ <p>Score: <b id="flowerScore">0</b></p>
+ <p id="flowerTimer">Time: 15</p>
+ <button id="flowerStart" onclick="startFlowerGame()">Start Game</button>
+ <div id="flowerTarget" onclick="catchFlower()">🌸</div>
+ <p id="flowerStatus" class="status"></p>
+</section>
 
-  <p class="subtitle">
-    কোনো নতুন dress নেই! 😜<br>
-    এটা শুধু তোমার বন্ধুর জন্য একটা Durga Puja prank।
-  </p>
+<section class="card" id="diyaGame">
+ <h2>🪔 Magic Diya</h2>
+ <p>দিয়াটি জ্বালাতে ১০ বার চাপো।</p>
+ <div id="gameDiya" class="diya">⚫</div>
+ <p>Clicks: <b id="diyaClicks">0</b>/10</p>
+ <button onclick="lightDiya()">🪔 Light Diya</button>
+ <button onclick="resetDiya()">Reset</button>
+ <button onclick="fireworks()">🎆 Fireworks!</button>
+ <p id="diyaStatus" class="status"></p>
+</section>
 
-  <p class="note">
-    তোমার কোনো personal data কোথাও পাঠানো বা সংরক্ষণ করা হয়নি।
-  </p>
+<section class="card" id="quizGame">
+ <h2>🧠 Durga Puja Quiz</h2>
+ <p id="quizProgress">মোট ১৯টি প্রশ্ন · প্রতি রাউন্ডে ৫টি</p>
+ <p id="quizQuestion">Start চাপো এবং quiz খেলো!</p>
+ <div id="quizOptions"></div>
+ <p id="quizFeedback" class="status"></p>
+ <p id="quizScore">Score: 0</p>
+ <button id="quizStart" onclick="startQuiz()">Start Quiz</button>
+ <button id="quizNext" class="hidden" onclick="nextQuizQuestion()">Submit Answer</button>
+ <button onclick="resetQuiz()">Restart Quiz</button>
+</section>
 
-  <button onclick="location.reload()">
-    আবার Prank করো 😈
-  </button>
+<section class="card">
+ <h2>🌺 Puja Celebration</h2>
+ <p>শুভ শারদীয়া! সবাই ভালো থেকো।</p>
+ <div class="diya">🪔 🌺 🙏 🌺 🪔</div>
+ <p>মা দুর্গা সবার জীবন আনন্দ, শান্তি ও ভালোবাসায় ভরিয়ে দিন।</p>
+ <button onclick="fireworks()">🎆 Celebrate!</button>
+</section>
+</main>
 
-</div>
-
+<footer>Made with ❤️ for Durga Puja</footer>
 
 <script>
+let audioContext=null,musicTimer=null,musicOn=false,lionAudio=null;
+let spinUsed=false,spinTimer=null,flowerInterval=null,flowerTimeInterval=null;
+let flowerTime=0,flowerPoints=0,diyaCount=0;
+let quizIndex=0,quizPoints=0,quizActive=false,quizAnswered=false;
+let wheelRotation=0,rgbOn=false;
+let songStarted=false;
 
-const form = document.getElementById("dressForm");
+const $=id=>document.getElementById(id);
 
-const main = document.getElementById("main");
+function getAudio(){
+ const C=window.AudioContext||window.webkitAudioContext;
+ if(!audioContext&&C)audioContext=new C();
+ if(audioContext&&audioContext.state==="suspended")audioContext.resume();
+ return audioContext;
+}
 
-const loading = document.getElementById("loading");
+function tone(freq=440,duration=.18,type="sine",volume=.08){
+ const c=getAudio();if(!c)return;
+ const o=c.createOscillator(),g=c.createGain();
+ o.type=type;o.frequency.value=freq;
+ g.gain.setValueAtTime(volume,c.currentTime);
+ g.gain.exponentialRampToValueAtTime(.001,c.currentTime+duration);
+ o.connect(g);g.connect(c.destination);
+ o.start();o.stop(c.currentTime+duration);
+}
 
-const result = document.getElementById("result");
+function playDhak(){
+ for(let i=0;i<10;i++)
+  setTimeout(()=>tone(i%2?105:75,.19,"triangle",.16),i*145);
+ $("soundStatus").textContent="🥁 Dhak sound effect playing!";
+}
 
-const status = document.getElementById("status");
+function playBell(){
+ tone(880,1.1,"sine",.13);tone(1320,.85,"sine",.07);
+ $("soundStatus").textContent="🔔 ঘণ্টার sound effect!";
+}
 
+function playConch(){
+ const c=getAudio();if(!c)return;
+ const o=c.createOscillator(),g=c.createGain();
+ o.type="sawtooth";
+ o.frequency.setValueAtTime(190,c.currentTime);
+ o.frequency.linearRampToValueAtTime(240,c.currentTime+1.4);
+ g.gain.setValueAtTime(.001,c.currentTime);
+ g.gain.linearRampToValueAtTime(.09,c.currentTime+.15);
+ g.gain.linearRampToValueAtTime(.001,c.currentTime+1.5);
+ o.connect(g);g.connect(c.destination);
+ o.start();o.stop(c.currentTime+1.55);
+ $("soundStatus").textContent="🐚 শঙ্খের synthesized sound effect!";
+}
 
-form.addEventListener("submit", function(e){
+/* NEW: play the audio-only MP3 */
+async function startSong(){
+ const song=$("maaDurgaSong");
+ if(!song)return;
 
-  e.preventDefault();
+ try{
+  song.volume=.75;
+  await song.play();
+  songStarted=true;
+  musicOn=true;
+  $("soundStatus").textContent="🎵 Maa Durga song চলছে!";
+  $("welcomeAudioStatus").textContent="🎵 গান চলছে!";
+ }catch(error){
+  songStarted=false;
+  musicOn=false;
+  $("soundStatus").textContent=
+   "গান চালু হয়নি। maa-durga-song.mp3 ফাইলটি index.html-এর পাশে রাখো, তারপর Music বাটন চাপো।";
+  $("welcomeAudioStatus").textContent=
+   "অডিও ফাইল পাওয়া যাচ্ছে না বা ব্রাউজার অটো-প্লে আটকেছে।";
+ }
+}
 
-  main.style.display = "none";
+function toggleMusic(){
+ const song=$("maaDurgaSong");
+ if(song && !song.paused){
+  song.pause();
+  musicOn=false;
+  $("soundStatus").textContent="🎵 Music বন্ধ আছে।";
+  return;
+ }
+ startSong();
+}
 
-  loading.style.display = "block";
+function playLionSound(){
+ if(!lionAudio){
+  lionAudio=new Audio("https://actions.google.com/sounds/v1/animals/lion_roar.ogg");
+  lionAudio.volume=.8;
+ }
+ lionAudio.currentTime=0;
+ lionAudio.play().then(()=>{
+  $("soundStatus").textContent="🦁 Lion roar playing!";
+ }).catch(()=>{
+  $("soundStatus").textContent="Lion sound-এর জন্য internet connection পরীক্ষা করো।";
+ });
+}
 
+function toggleFullscreen(){
+ if(!document.fullscreenElement){
+  document.documentElement.requestFullscreen?.().catch(()=>{});
+ }else{
+  document.exitFullscreen?.().catch(()=>{});
+ }
+}
 
-  const messages = [
+function toggleRGB(){
+ rgbOn=!rgbOn;
+ document.body.classList.toggle("rgb-on",rgbOn);
+ $("rgbToggle").setAttribute("aria-pressed",String(rgbOn));
+ $("rgbToggle").textContent=rgbOn?"🌈 RGB Lights: On":"🌈 RGB Lights: Off";
+}
 
-    "Dress selection যাচাই করা হচ্ছে...",
+function enterPuja(){
+ const n=$("visitorName").value.trim();
+ $("mainWelcome").classList.add("hidden");
+ ["celebration","darshanSection","luckySection","secretSection","replySection","nextPageSection"]
+  .forEach(id=>$(id).classList.remove("hidden"));
+ $("greeting").textContent=n?"শুভ শারদীয়া, "+n+"! 🌺":"শুভ শারদীয়া! 🌺";
+ makePetals();create3DParticles();playDhak();
+ startSong();
+ window.scrollTo({top:0,behavior:"smooth"});
+}
 
-    "Puja surprise package তৈরি হচ্ছে...",
+function darshanBlessing(){
+ $("darshanStatus").textContent="🌺 জয় মা দুর্গা! তোমার জীবন আনন্দ, শান্তি ও ভালোবাসায় ভরে উঠুক।";
+ makePetals();create3DParticles();fireworks();
+ tone(660,.4,"sine",.1);
+}
 
-    "Gift wrapping করা হচ্ছে...",
+function makePetals(){
+ for(let i=0;i<18;i++){
+  const p=document.createElement("span");
+  p.className="petal";
+  p.textContent=["🌸","🌺","✨","🍂"][Math.floor(Math.random()*4)];
+  p.style.left=Math.random()*100+"vw";
+  p.style.animationDuration=(4+Math.random()*5)+"s";
+  p.style.fontSize=(16+Math.random()*18)+"px";
+  document.body.appendChild(p);
+  setTimeout(()=>p.remove(),9500);
+ }
+}
 
-    "শেষ ধাপ চলছে..."
+function create3DParticles(){
+ const symbols=["🌸","🌺","✨","🪔","💫"];
+ for(let i=0;i<22;i++){
+  const p=document.createElement("span");
+  p.className="particle3d";
+  p.textContent=symbols[Math.floor(Math.random()*symbols.length)];
+  p.style.setProperty("--x",Math.random()*100+"vw");
+  p.style.setProperty("--size",(15+Math.random()*23)+"px");
+  p.style.setProperty("--duration",(7+Math.random()*8)+"s");
+  p.style.animationDelay=(Math.random()*3)+"s";
+  document.body.appendChild(p);
+  setTimeout(()=>p.remove(),19000);
+ }
+}
 
-  ];
+function spinLucky(){
+ if(spinUsed)return;
+ spinUsed=true;
+ $("spinButton").disabled=true;
 
+ const choices=[
+  "🌸 Happiness","✨ Good Luck","🪔 Peace","🎉 Joy",
+  "💛 Success","💖 Love","🌿 Health","🌺 Joy"
+ ];
+ const idx=Math.floor(Math.random()*choices.length);
+ const segment=360/choices.length;
+ wheelRotation+=360*5+(360-(idx+.5)*segment);
+ $("wheel").style.transform="rotate("+wheelRotation+"deg)";
 
-  let i = 0;
+ let count=0;
+ spinTimer=setInterval(()=>{
+  tone(450+count*28,.055,"sine",.03);
+  count++;
+  if(count>=15){
+   clearInterval(spinTimer);spinTimer=null;
+   $("luckyResult").textContent="🎊 তোমার Puja wish: "+choices[idx];
+   $("spinButton").disabled=false;
+   spinUsed=false;
+  }
+ },270);
+}
 
+function unlockSecret(){
+ const ok=$("secretCode").value.trim().toUpperCase()==="HELLO";
+ $("secretResult").textContent=ok
+  ?"🎁 GOTCHA! শুভ শারদীয়া! তুমি দারুণ! 🌺"
+  :"Code ঠিক হয়নি। আবার চেষ্টা করো!";
+ if(ok){
+  makePetals();create3DParticles();fireworks();
+  tone(660,.4,"sine",.1);
+ }
+}
 
-  const timer = setInterval(function(){
+function makeReply(){
+ const n=$("replyName").value.trim();
+ const m=$("replyText").value.trim();
+ if(!m){
+  $("replyStatus").textContent="আগে তোমার reply লিখো!";
+  return;
+ }
+ const r="🌺 শুভ শারদীয়া! 🌺\n"+(n?"From: "+n+"\n":"")+m;
+ $("replyPreview").textContent=r;
+ $("replyPreview").classList.remove("hidden");
+ $("replyStatus").textContent="Reply তৈরি হয়েছে!";
+}
 
-    status.textContent = messages[i];
+async function shareReply(){
+ const n=$("replyName").value.trim();
+ const m=$("replyText").value.trim();
+ if(!m){
+  $("replyStatus").textContent="আগে তোমার reply লিখো!";
+  return;
+ }
+ const r="🌺 শুভ শারদীয়া! 🌺\n"+(n?"From: "+n+"\n":"")+m;
+ try{
+  if(navigator.share){
+   await navigator.share({title:"Puja Reply",text:r});
+   $("replyStatus").textContent="Share menu খোলা হয়েছে।";
+  }else if(navigator.clipboard&&window.isSecureContext){
+   await navigator.clipboard.writeText(r);
+   $("replyStatus").textContent="Reply কপি হয়েছে!";
+  }else{
+   $("replyPreview").textContent=r;
+   $("replyPreview").classList.remove("hidden");
+   $("replyStatus").textContent="Reply select করে copy করো।";
+  }
+ }catch(e){
+  if(e.name!=="AbortError")
+   $("replyStatus").textContent="Share করা যায়নি। Reply select করে copy করো।";
+ }
+}
 
-    i++;
+function showGamesPage(){
+ $("homePage").classList.add("hidden");
+ $("gamesPage").classList.remove("hidden");
+ window.scrollTo({top:0,behavior:"smooth"});
+}
 
+/* NEW: Challenge Zone shortcuts */
+function goToChallenge(id){
+ const target=$(id);
+ if(!target)return;
+ target.scrollIntoView({behavior:"smooth",block:"start"});
+ $("challengeStatus").textContent="✨ Challenge selected! শুরু করো!";
+ if(id==="flowerGame")startFlowerGame();
+ if(id==="quizGame"&&!quizActive)startQuiz();
+}
 
-    if(i >= messages.length){
+/* Flower-catching game */
+function startFlowerGame(){
+ clearInterval(flowerInterval);
+ clearInterval(flowerTimeInterval);
+ flowerPoints=0;flowerTime=15;
+ $("flowerScore").textContent="0";
+ $("flowerTimer").textContent="Time: 15";
+ $("flowerStatus").textContent="ফুলে tap করো!";
+ $("flowerStart").disabled=true;
 
-      clearInterval(timer);
+ const flowers=["🌸","🌺","🌼","💮"];
+ $("flowerTarget").textContent="🌸";
 
+ flowerInterval=setInterval(()=>{
+  $("flowerTarget").textContent=flowers[Math.floor(Math.random()*flowers.length)];
+ },450);
 
-      setTimeout(function(){
+ flowerTimeInterval=setInterval(()=>{
+  flowerTime--;
+  $("flowerTimer").textContent="Time: "+flowerTime;
 
-        loading.style.display = "none";
+  if(flowerTime<=0){
+   clearInterval(flowerInterval);
+   clearInterval(flowerTimeInterval);
+   flowerInterval=flowerTimeInterval=null;
+   $("flowerStart").disabled=false;
+   $("flowerStatus").textContent="সময় শেষ! তোমার Score: "+flowerPoints+" 🌸";
+   tone(660,.3,"sine",.07);
+  }
+ },1000);
+}
 
-        result.style.display = "block";
+function catchFlower(){
+ if(flowerTime>0){
+  flowerPoints++;
+  $("flowerScore").textContent=flowerPoints;
+  tone(600,.08,"sine",.04);
+ }
+}
 
-      },800);
+/* Magic Diya game */
+function lightDiya(){
+ if(diyaCount>=10)return;
+ diyaCount++;
+ $("diyaClicks").textContent=diyaCount;
+ tone(420+diyaCount*35,.12,"sine",.06);
 
-    }
+ if(diyaCount>=10){
+  $("gameDiya").textContent="🪔";
+  $("diyaStatus").textContent="✨ Diya জ্বলে উঠেছে! শুভ শারদীয়া!";
+  makePetals();create3DParticles();fireworks();
+ }else{
+  $("gameDiya").textContent="🕯️";
+  $("diyaStatus").textContent="আর "+(10-diyaCount)+" বার চাপো!";
+ }
+}
 
-  },900);
+function resetDiya(){
+ diyaCount=0;
+ $("diyaClicks").textContent="0";
+ $("gameDiya").textContent="⚫";
+ $("diyaStatus").textContent="";
+}
 
+/* Fireworks effect */
+function fireworks(){
+ const layer=$("fxLayer");
+ const colors=["#ffd76a","#ff526e","#6cfaff","#ffffff","#ff8b2e","#bd7bff"];
+
+ for(let burst=0;burst<5;burst++){
+  setTimeout(()=>{
+   const x=10+Math.random()*80;
+   const y=15+Math.random()*60;
+
+   for(let i=0;i<22;i++){
+    const s=document.createElement("span");
+    s.className="spark";
+    s.style.left=x+"%";
+    s.style.top=y+"%";
+    s.style.setProperty("--spark",colors[Math.floor(Math.random()*colors.length)]);
+
+    const a=Math.PI*2*i/22;
+    const r=45+Math.random()*90;
+    s.style.setProperty("--dx",Math.cos(a)*r+"px");
+    s.style.setProperty("--dy",Math.sin(a)*r+"px");
+
+    layer.appendChild(s);
+    setTimeout(()=>s.remove(),1200);
+   }
+  },burst*250);
+ }
+}
+
+/* Durga Puja Quiz: 19 questions, 5 per round */
+const quizData=[
+ {q:"দুর্গাপূজা কাকে সম্মান জানিয়ে উদ্‌যাপন করা হয়?",o:["মা দুর্গা","সরস্বতী","লক্ষ্মী","মনসা"],a:0},
+ {q:"মা দুর্গার বাহন কী?",o:["ঘোড়া","সিংহ","হাতি","ময়ূর"],a:1},
+ {q:"দুর্গাপূজার সঙ্গে কোন উৎসবের নাম বিশেষভাবে জড়িত?",o:["দীপাবলি","নববর্ষ","নবরাত্রি","হোলি"],a:2},
+ {q:"দুর্গাপূজার আগে কোন উৎসব পালিত হয়?",o:["জন্মাষ্টমী","রথযাত্রা","সরস্বতী পূজা","মহালয়া"],a:3},
+ {q:"দুর্গাপূজার দশম দিনে কোন উৎসব পালিত হয়?",o:["বিজয়া দশমী","দোলযাত্রা","রাখি","ভাইফোঁটা"],a:0},
+ {q:"মা দুর্গার সঙ্গে কোন দেবতা সাধারণত দেখা যায়?",o:["ইন্দ্র","কার্তিক","যম","বরুণ"],a:1},
+ {q:"মা দুর্গার কন্যা হিসেবে কারা পরিচিত?",o:["গঙ্গা ও যমুনা","রাধা ও রুক্মিণী","লক্ষ্মী ও সরস্বতী","সীতা ও উর্মিলা"],a:2},
+ {q:"দুর্গাপূজার মণ্ডপকে কী বলা হয়?",o:["মঠ","গির্জা","বিহার","প্যান্ডেল"],a:3},
+ {q:"দুর্গাপূজায় কোন বাদ্যযন্ত্রের শব্দ খুব পরিচিত?",o:["ঢাক","বেহালা","পিয়ানো","গিটার"],a:0},
+ {q:"দুর্গাপূজার সময় মানুষ একে অপরকে কী জানায়?",o:["শুভ রাত্রি","শুভ শারদীয়া","শুভ সকাল","শুভ জন্মদিন"],a:1},
+ {q:"মা দুর্গার হাতে সাধারণত কী দেখা যায়?",o:["শুধু ফুল","শুধু বই","বিভিন্ন অস্ত্র","শুধু প্রদীপ"],a:2},
+ {q:"মহালয়া সাধারণত কোন পর্বের সূচনা নির্দেশ করে?",o:["গ্রীষ্মকাল","শীতকাল","বর্ষাকাল","দুর্গাপূজার আগমনী পর্ব"],a:3},
+ {q:"দুর্গাপূজার একটি জনপ্রিয় মিষ্টি কী?",o:["সন্দেশ","চিপস","নুডলস","পপকর্ন"],a:0},
+ {q:"দুর্গাপূজার সময় মানুষ কী দেখতে বিভিন্ন মণ্ডপে যায়?",o:["পরীক্ষা","প্রতিমা ও সাজসজ্জা","অফিস","ক্লাস"],a:1},
+ {q:"দুর্গাপূজার একটি গুরুত্বপূর্ণ মূল্যবোধ কী?",o:["লোভ","হিংসা","অশুভের বিরুদ্ধে শুভের জয়","অলসতা"],a:2},
+ {q:"মা দুর্গার পূজায় কোন ফুলটি প্রায়ই ব্যবহার করা হয়?",o:["ক্যাকটাস","সূর্যমুখী গাছের পাতা","ঘাস","জবা"],a:3},
+ {q:"দুর্গাপূজার পরে বাঙালিরা একে অপরকে কী জানায়?",o:["বিজয়ার শুভেচ্ছা","পরীক্ষার ফল","নতুন বছরের হিসাব","ক্রীড়া সংবাদ"],a:0},
+ {q:"দুর্গাপূজা সাধারণত কোন ঋতুতে হয়?",o:["গ্রীষ্ম","শরৎ","বর্ষা","শীতের শেষ"],a:1},
+ {q:"দুর্গাপূজার আনন্দ ভাগ করে নেওয়ার ভালো উপায় কোনটি?",o:["ঝগড়া করা","অন্যকে বাদ দেওয়া","শুভেচ্ছা ও আনন্দ ভাগ করা","ময়লা ফেলা"],a:2}
+];
+
+function startQuiz(){
+ quizIndex=0;
+ quizPoints=0;
+ quizActive=true;
+ quizAnswered=false;
+ $("quizStart").classList.add("hidden");
+ $("quizNext").classList.remove("hidden");
+ showQuizQuestion();
+}
+
+function showQuizQuestion(){
+ if(quizIndex>=quizData.length){
+  finishQuiz();
+  return;
+ }
+
+ const round=Math.floor(quizIndex/5)+1;
+ const roundStart=Math.floor(quizIndex/5)*5;
+ const roundEnd=Math.min(roundStart+5,quizData.length);
+
+ $("quizProgress").textContent=
+  "Round "+round+" · প্রশ্ন "+(quizIndex-roundStart+1)+"/"+(roundEnd-roundStart)+
+  " · মোট "+quizData.length+"টি প্রশ্ন";
+
+ const item=quizData[quizIndex];
+ $("quizQuestion").textContent=(quizIndex+1)+". "+item.q;
+ $("quizOptions").innerHTML="";
+ $("quizFeedback").textContent="";
+ quizAnswered=false;
+ $("quizNext").disabled=false;
+ $("quizNext").textContent="Submit Answer";
+
+ item.o.forEach((option,i)=>{
+  const label=document.createElement("label");
+  label.className="quizQuestion";
+  const radio=document.createElement("input");
+  radio.type="radio";
+  radio.name="quizAnswer";
+  radio.value=i;
+  label.appendChild(radio);
+  label.appendChild(document.createTextNode(option));
+  $("quizOptions").appendChild(label);
+ });
+}
+
+function nextQuizQuestion(){
+ if(!quizActive)return;
+
+ if(!quizAnswered){
+  const selected=document.querySelector('input[name="quizAnswer"]:checked');
+  if(!selected){
+   $("quizFeedback").textContent="আগে একটি উত্তর বেছে নাও!";
+   return;
+  }
+
+  const chosen=Number(selected.value);
+  const correct=quizData[quizIndex].a;
+
+  if(chosen===correct){
+   quizPoints++;
+   $("quizFeedback").textContent="✅ সঠিক উত্তর! খুব ভালো!";
+   tone(700,.15,"sine",.05);
+  }else{
+   $("quizFeedback").textContent="🙂 সঠিক উত্তর: "+quizData[quizIndex].o[correct];
+  }
+
+  $("quizScore").textContent="Score: "+quizPoints+" / "+(quizIndex+1);
+  document.querySelectorAll('input[name="quizAnswer"]').forEach(r=>r.disabled=true);
+  quizAnswered=true;
+  $("quizNext").textContent=quizIndex===quizData.length-1?"See Result ➜":"Next Question ➜";
+  return;
+ }
+
+ quizIndex++;
+ if(quizIndex>=quizData.length)finishQuiz();
+ else showQuizQuestion();
+}
+
+function finishQuiz(){
+ quizActive=false;
+ $("quizQuestion").textContent="🎉 Quiz সম্পূর্ণ হয়েছে!";
+ $("quizOptions").innerHTML="";
+ $("quizProgress").textContent="তুমি সব ১৯টি প্রশ্ন শেষ করেছ!";
+ $("quizFeedback").textContent=
+  quizPoints>=15?"দারুণ! তুমি Puja Quiz-এ অসাধারণ করেছ! 🌟":
+  quizPoints>=10?"খুব ভালো! আবার শিখে আরও ভালো করতে পারবে! 🌺":
+  "অংশগ্রহণের জন্য ধন্যবাদ! আবার চেষ্টা করো! 🙏";
+ $("quizScore").textContent="Final Score: "+quizPoints+" / "+quizData.length;
+ $("quizNext").classList.add("hidden");
+ $("quizStart").classList.remove("hidden");
+ $("quizStart").textContent="Play Again";
+ fireworks();
+}
+
+function resetQuiz(){
+ quizIndex=0;
+ quizPoints=0;
+ quizActive=false;
+ quizAnswered=false;
+ $("quizQuestion").textContent="Start চাপো এবং quiz খেলো!";
+ $("quizOptions").innerHTML="";
+ $("quizProgress").textContent="মোট ১৯টি প্রশ্ন · প্রতি রাউন্ডে ৫টি";
+ $("quizFeedback").textContent="";
+ $("quizScore").textContent="Score: 0";
+ $("quizStart").classList.remove("hidden");
+ $("quizStart").textContent="Start Quiz";
+ $("quizNext").classList.add("hidden");
+}
+
+/* Welcome with Enter key support */
+$("visitorName").addEventListener("keydown",e=>{
+ if(e.key==="Enter")enterPuja();
+});
+$("secretCode").addEventListener("keydown",e=>{
+ if(e.key==="Enter")unlockSecret();
 });
 
+/* Stop the song if the visitor hides the page */
+document.addEventListener("visibilitychange",()=>{
+ if(document.hidden){
+  const song=$("maaDurgaSong");
+  if(song&&!song.paused){
+   song.pause();
+   musicOn=false;
+   $("soundStatus").textContent="🎵 পেজটি লুকানো থাকায় গান pause হয়েছে। Music বাটন চাপলে আবার চলবে।";
+  }
+ }
+});
 </script>
-
 </body>
 </html>
